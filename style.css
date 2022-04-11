@@ -1,0 +1,106 @@
+:root {
+    --color-one: #f5b0d6;
+    --color-two: #e08dbb;
+    --color-three: #bd6093;
+    --color-four: #90386a;
+    --color-dark: black;
+    --color-light: white;
+}
+
+.button {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: var(--color-one);
+    transform: translate(0, 0) rotateY(0) skewY(0);
+    transition: 0.2s;
+    margin: 0 auto;
+}
+.button:hover {
+    transform: translate(-15px, -5px) rotateY(-15deg) skewY(-10deg);
+}
+i {
+    font-size: 125px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-dark);
+    z-index: 10;
+    transition: 0.2s;
+}
+.button:hover i {
+    color: var(--color-light);
+}
+.button span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+    transform: translate(0, 0);
+}
+.button span:nth-of-type(4) {
+    transform: translate(-4px, -4px);
+    transition: 0.2s;
+    z-index: 0;
+    opacity: 0.5s;
+    border-top: 1px solid var(--color-dark);
+    border-left: 1px solid var(--color-dark);
+}
+/* .button:hover span:nth-of-type(4) {
+    transform: translate(-4px, -4px);
+    transition: 0.2s;
+    z-index: 0;
+    opacity: 0.5s;
+    border-top: 1px solid var(--color-dark);
+    border-left: 1px solid var(--color-dark);
+} */
+.button:hover span:nth-of-type(1) {
+    transform: translate(8px, 4px);
+    background-color: var(--color-two);
+}
+.button:hover span:nth-of-type(2) {
+    transform: translate(16px, 8px);
+    background-color: var(--color-three);
+}
+.button:hover span:nth-of-type(3) {
+    transform: translate(24px, 12px);
+    background-color: var(--color-four);
+}
+
+.button span:nth-of-type(4)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-bottom: 1px solid var(--color-dark);
+    transition: 0.2s;
+}
+.button span:nth-of-type(4)::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-right: 1px solid var(--color-dark);
+    transition: 0.2s;
+}
+.button:hover span:nth-of-type(4)::before {
+    width: 100%;
+    transition-delay: 0.4s;
+}
+.button:hover span:nth-of-type(4)::after {
+    height: 100%;
+    transition-delay: 0.6s;
+    top: 0;
+
+}
+.button:hover span:nth-of-type(4) {
+    transform: translate(30px, 16px);
+    transition-delay: 0.2s;
+}
